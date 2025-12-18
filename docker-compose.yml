@@ -2,6 +2,8 @@ version: "3.9"
 
 services:
   app:
+    environment:
+      - TZ=Europe/Kyiv
     build: .
     container_name: autoria_app
     env_file:
@@ -20,6 +22,7 @@ services:
       POSTGRES_DB: autoria
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+       - TZ=Europe/Kyiv
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
